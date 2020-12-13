@@ -58,7 +58,7 @@ export default class ProductsList extends Component {
       return (
         <button 
           type="button" 
-          className="btn border border-dark m-2" 
+          className="btn border border-dark m-2 col-3" 
           key={index}
           onClick={() => {this.handleSelectGlass(product)}}
         >
@@ -84,7 +84,7 @@ export default class ProductsList extends Component {
             <OtherProduct />
           </div>
         </div>
-        <div className="row mt-5 py-5 bg-white text-dark">
+        <div className="row mt-5 py-5 bg-white justify-content-center" >
           {this.renderGlassesList()}
         </div>
       </div>
