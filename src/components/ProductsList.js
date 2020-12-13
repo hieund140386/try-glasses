@@ -75,7 +75,7 @@ export default class ProductsList extends Component {
     const glassInfo = {url, desc};
     console.log("In render of product list: product list url: ", glassInfo.url);
     return (
-      <div className="container">
+      <div className="container mt-5">
         <div className="row">
           <div className="col-6">
             <Product glassInfo={{url, desc}}/>
@@ -84,7 +84,7 @@ export default class ProductsList extends Component {
             <OtherProduct />
           </div>
         </div>
-        <div className="row mt-5 py-5 bg-white justify-content-center" >
+        <div className="row mt-5 py-3 bg-white justify-content-center" >
           {this.renderGlassesList()}
         </div>
       </div>
