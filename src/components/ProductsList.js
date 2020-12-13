@@ -77,10 +77,10 @@ export default class ProductsList extends Component {
     return (
       <div className="container">
         <div className="row">
-          <div className="col-6 border border-danger">
+          <div className="col-6">
             <Product glassInfo={{url, desc}}/>
           </div>
-          <div className="col-6 border border-danger">
+          <div className="col-6">
             <OtherProduct />
           </div>
         </div>
