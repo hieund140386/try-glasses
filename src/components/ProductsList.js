@@ -58,7 +58,7 @@ export default class ProductsList extends Component {
       return (
         <button 
           type="button" 
-          className="btn btn-white" 
+          className="btn border border-dark m-2" 
           key={index}
           onClick={() => {this.handleSelectGlass(product)}}
         >
