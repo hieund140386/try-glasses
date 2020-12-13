@@ -1,0 +1,20 @@
+.product {
+  text-align: center;
+  position: relative;
+  img:nth-child(2) {
+    width: 100px;
+    position: absolute;
+    left: 50%;
+    top: 18%;
+    transform: translate(-50%, 30%);
+  }
+  div:nth-child(3) {
+    width: 200px;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background-color: rgba(250, 185, 7, 0.493);
+    color: white;
+  }
+}

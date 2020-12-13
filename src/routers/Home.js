@@ -1,7 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
 import ProductsList from '../components/ProductsList'
-// import HomeStyle from '../stylesheets/home.module.scss'
 
 export default function Home() {
   return (

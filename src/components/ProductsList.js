@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import OtherProduct from './OtherProduct';
 import Product from './Product';
 
 const arrProduct = [
@@ -33,36 +34,58 @@ const arrProduct = [
 
 export default class ProductsList extends Component {
 
-  renderImage = () => {
-    return arrProduct.map(
-      (product, index) => {
-        return (
-        <div key={index}>
-          <Product product={product} />
-        </div>
-        );
+  state = {
+      product: {
+        id: null, 
+        price: null, 
+        name: null, 
+        url: null, 
+        desc: null
       }
-    )
+  };
+
+  handleSelectGlass = (product) => {
+  this.setState({
+    product
+  }, () => {
+      console.log("after setState - handleSelectGlass - url", this.state.product.url);
+      console.log("after setState - handleSelectGlass - desc", this.state.product.desc);
+    });
+  }
+
+  renderGlassesList = () => {
+    return newArrProduct.map((product, index) => {
+      return (
+        <button 
+          type="button" 
+          className="btn btn-white" 
+          key={index}
+          onClick={() => {this.handleSelectGlass(product)}}
+        >
+          <img 
+            src={`${(product.url)}`} 
+            alt="no available" width="100px" 
+          />
+        </button>
+      );
+    });
   }
   render() {
+    const { url, desc } = this.state.product;
+    const glassInfo = {url, desc};
+    console.log("In render of product list: product list url: ", glassInfo.url);
     return (
       <div className="container">
         <div className="row">
-          <div className="col-6">
-            <Product />
+          <div className="col-6 border border-danger">
+            <Product glassInfo={{url, desc}}/>
           </div>
-          <div className="col-6">
-            <Product />
+          <div className="col-6 border border-danger">
+            <OtherProduct />
           </div>
         </div>
-        <div className="row mt-5 bg-white text-dark">
-          {newArrProduct.map((product, index) => {
-            return (
-              <button type="button" className="btn btn-white" key={index}>
-                <img src={`${(product.url)}`} alt="no available" width="100px" className="border border-danger"/>
-              </button>
-            );
-          })}
+        <div className="row mt-5 py-5 bg-white text-dark">
+          {this.renderGlassesList()}
         </div>
       </div>
     )
