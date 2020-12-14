@@ -1,4 +1,4 @@
-export const GlassesList = [
+const GlassesList = [
 
   { id: 1, price: 30, name: 'GUCCI G8850U', url: '/glassesImage/v1.png', desc: 'Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ' },
 
@@ -19,3 +19,5 @@ export const GlassesList = [
   { id: 9, price: 30, name: 'FENDI F4300', url: '/glassesImage/v9.png', desc: 'Light pink square lenses define these sunglasses, ending with amother of pearl effect tip. ' },
 
  ];
+
+ export default GlassesList;

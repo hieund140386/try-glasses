@@ -1,14 +1,8 @@
 import React, { Component } from 'react'
 import OtherProduct from './OtherProduct';
 import Product from './Product';
-import { GlassesList } from '../models/GlassesList'
-
- const newArrProduct = GlassesList.map((product, index) => {
-   let newUrl = product.url.replace("/glassesImage", "./images/glasses");
-   return (
-     { ...product, url: newUrl }
-   );
- });
+import model from '../images/glasses/model.jpg'
+import NewGlassesList from '../models/NewGlassesList'
 
 
 export default class ProductsList extends Component {
@@ -24,25 +18,22 @@ export default class ProductsList extends Component {
   };
 
   handleSelectGlass = (product) => {
-  this.setState({
-    product
-  }, () => {
-      console.log("after setState - handleSelectGlass - url", this.state.product.url);
-      console.log("after setState - handleSelectGlass - desc", this.state.product.desc);
+    this.setState({
+      product
     });
   }
 
   renderGlassesList = () => {
-    return newArrProduct.map((product, index) => {
+    return NewGlassesList.map((product, index) => {
       return (
         <button 
           type="button" 
           className="btn border border-dark m-2 col-3" 
-          key={index}
-          onClick={() => {this.handleSelectGlass(product)}}
+          key={ index }
+          onClick={() => { this.handleSelectGlass(product) }}
         >
           <img 
-            src={`${(product.url)}`} 
+            src={`${(product.selectedGlass)}`} 
             alt="no available" width="100px" 
           />
         </button>
@@ -51,16 +42,15 @@ export default class ProductsList extends Component {
   }
   render() {
     const { url, desc } = this.state.product;
-    const glassInfo = {url, desc};
-    console.log("In render of product list: product list url: ", glassInfo.url);
+    const glassInfo = { url, desc };
     return (
       <div className="container mt-5">
         <div className="row">
           <div className="col-6">
-            <Product glassInfo={{url, desc}}/>
+            <Product glassInfo={{ url, desc }} model={ model }/>
           </div>
           <div className="col-6">
-            <OtherProduct />
+            <OtherProduct model={ model }/>
           </div>
         </div>
         <div className="row mt-5 py-3 bg-white justify-content-center" >
