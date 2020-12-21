@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "VinSmart Live",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/226436/vsmart-live-4-242920-072956-400x460.png",
+    "price": 5700000
+  },
+  {
+    "id": 2,
+    "name": "Iphone 12 Pro",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/228744/iphone-12-pro-max-512gb-191020-021004-400x400.png",
+    "price": 44000000
+  },
+  {
+    "id": 3,
+    "name": "Samsung Note 10",
+    "image": "https://phuckhangmobile.com/file/samsung-galaxy-note-10-do-dai-dien-19364f.jpg",
+    "price": 12000000
+  }
+]
